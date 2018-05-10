@@ -133,16 +133,18 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
         
         I = cutImage(I, cutTop, cutBottom);
         
+        if diffusionWeightOverlapLBPFlag,
         ind=find(ismember(iterCntCASIAtrain(:, 1), strrep(trainFileNames{i}, '.jpg', '.ppm')));
         ligRmvCnt = iterCntCASIAtrain{ind,2};        
-        if ligRmvCnt <= 3,
-            iterCntDW = 8;
-        elseif ligRmvCnt <= 6,
-            iterCntDW = 7;
-        elseif ligRmvCnt <= 9,
-            iterCntDW = 6;
-        else
-            iterCntDW = 5;
+            if ligRmvCnt <= 3,
+                iterCntDW = 8;
+            elseif ligRmvCnt <= 6,
+                iterCntDW = 7;
+            elseif ligRmvCnt <= 9,
+                iterCntDW = 6;
+            else
+                iterCntDW = 5;
+            end
         end
         
         %% _HR_
@@ -1265,18 +1267,20 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
         
         I = cutImage(I, cutTop, cutBottom);        
         
+        if diffusionWeightOverlapLBPFlag,
         ind=find(ismember(iterCntCASIAtest(:, 1), strrep(testFileNames{i}, '.jpg', '.ppm')));
         ligRmvCnt = iterCntCASIAtest{ind,2};
-        if ligRmvCnt <= 3,
-            iterCntDW = 8;
-        elseif ligRmvCnt <= 6,
-            iterCntDW = 7;
-        elseif ligRmvCnt <= 9,
-            iterCntDW = 6;
-        else
-            iterCntDW = 5;
+            if ligRmvCnt <= 3,
+                iterCntDW = 8;
+            elseif ligRmvCnt <= 6,
+                iterCntDW = 7;
+            elseif ligRmvCnt <= 9,
+                iterCntDW = 6;
+            else
+                iterCntDW = 5;
+            end
         end
-        
+            
         %% _HR_
         if ~isempty(strfind(testFileNames{i},'_HR_')),
             if ~isempty(strfind(testFileNames{i},'_1_')), % genuine

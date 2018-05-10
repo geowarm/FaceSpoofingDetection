@@ -135,16 +135,18 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
             
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+            if diffusionWeightOverlapLBPFlag,
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
             
             if distortionFeatureFlag,
@@ -285,16 +287,18 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
               
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+            if diffusionWeightOverlapLBPFlag,
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
             
             if distortionFeatureFlag,
@@ -415,18 +419,20 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
               
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+            if diffusionWeightOverlapLBPFlag,
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
-                        
+              
             if distortionFeatureFlag,
                 % blurriness features
                 blurriness = blurMetric(I);
@@ -858,16 +864,18 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
                           
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+            if diffusionWeightOverlapLBPFlag,
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
                                     
             if distortionFeatureFlag,
@@ -1002,17 +1010,19 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
-                          
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+              
+            if diffusionWeightOverlapLBPFlag,            
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
             
             if distortionFeatureFlag,
@@ -1134,17 +1144,19 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
             
             I = cutImage(I, cutTop, cutBottom);
             % [ssr I msrcr ] = retinex(I);
-                          
-            ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
-            ligRmvCnt = iterCntMSU{ind,2};
-            if ligRmvCnt <= 3,
-                iterCntDW = 8;
-            elseif ligRmvCnt <= 6,
-                iterCntDW = 7;
-            elseif ligRmvCnt <= 9,
-                iterCntDW = 6;
-            else
-                iterCntDW = 5;
+              
+            if diffusionWeightOverlapLBPFlag,            
+                ind=find(ismember(iterCntMSU(:, 1), strrep(totalImgList(j).name, '.jpg', '.ppm')));
+                ligRmvCnt = iterCntMSU{ind,2};
+                if ligRmvCnt <= 3,
+                    iterCntDW = 8;
+                elseif ligRmvCnt <= 6,
+                    iterCntDW = 7;
+                elseif ligRmvCnt <= 9,
+                    iterCntDW = 6;
+                else
+                    iterCntDW = 5;
+                end
             end
             
             if distortionFeatureFlag,

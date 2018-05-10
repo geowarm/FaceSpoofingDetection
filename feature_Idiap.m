@@ -121,18 +121,19 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
         
         I = cutImage(I, cutTop, cutBottom);
         
-        ind=find(ismember(iterCntIdiaptrain(:, 1), strrep(trainFileNames{i}, '.jpg', '.ppm')));
-        ligRmvCnt = iterCntIdiaptrain{ind,2};
-        if ligRmvCnt <= 3,
-            iterCntDW = 8;
-        elseif ligRmvCnt <= 6,
-            iterCntDW = 7;
-        elseif ligRmvCnt <= 9,
-            iterCntDW = 6;
-        else
-            iterCntDW = 5;
+        if diffusionWeightOverlapLBPFlag,
+            ind=find(ismember(iterCntIdiaptrain(:, 1), strrep(trainFileNames{i}, '.jpg', '.ppm')));
+            ligRmvCnt = iterCntIdiaptrain{ind,2};
+            if ligRmvCnt <= 3,
+                iterCntDW = 8;
+            elseif ligRmvCnt <= 6,
+                iterCntDW = 7;
+            elseif ligRmvCnt <= 9,
+                iterCntDW = 6;
+            else
+                iterCntDW = 5;
+            end
         end
-        
         
         if ~isempty(strfind(trainFileNames{i},'authenticate')), % genuine
             numCurrentGenRow = numCurrentGenRow + 1;
@@ -692,18 +693,20 @@ if distortionFeatureFlag || glcmFeatureFlag || visualRhythmHoriFlag || overlapJP
         
         I = cutImage(I, cutTop, cutBottom);
         
-        ind=find(ismember(iterCntIdiaptest(:, 1), strrep(testFileNames{i}, '.jpg', '.ppm')));
-        ligRmvCnt = iterCntIdiaptest{ind,2};
-        if ligRmvCnt <= 3,
-            iterCntDW = 8;
-        elseif ligRmvCnt <= 6,
-            iterCntDW = 7;
-        elseif ligRmvCnt <= 9,
-            iterCntDW = 6;
-        else
-            iterCntDW = 5;
+        if diffusionWeightOverlapLBPFlag,
+            ind=find(ismember(iterCntIdiaptest(:, 1), strrep(testFileNames{i}, '.jpg', '.ppm')));
+            ligRmvCnt = iterCntIdiaptest{ind,2};
+            if ligRmvCnt <= 3,
+                iterCntDW = 8;
+            elseif ligRmvCnt <= 6,
+                iterCntDW = 7;
+            elseif ligRmvCnt <= 9,
+                iterCntDW = 6;
+            else
+                iterCntDW = 5;
+            end
         end
-                
+        
         if ~isempty(strfind(testFileNames{i},'authenticate')), % genuine
             numCurrentGenRow = numCurrentGenRow + 1;
             
